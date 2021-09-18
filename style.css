@@ -1,0 +1,440 @@
+* {
+    margin: 0;
+}
+
+.container {
+    max-width: 1199px;
+    margin: 100px auto;
+    font-size: 12px;
+    line-height: 150%;
+    font-family: system-ui;
+    border-radius: 25px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    background-color: #000000c7;
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.63);
+}
+
+#one,
+.details,
+.daily,
+#hourlyWeather {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    /* margin: 10px; */
+    /* padding: 5px; */
+
+    /* box-shadow: 0px 0px 15px 8px rgba(144, 164, 175, 0.48); */
+
+}
+
+.bg {
+    position: absolute;
+    z-index: 1;
+    left: -10px;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    filter: blur(15px);
+    background-size: cover;
+}
+
+
+
+
+.city {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.degrres {
+    font-size: 25px;
+    line-height: 130%;
+    font-weight: 600;
+}
+
+
+.time {
+    text-align: center;
+    display: block;
+    /* margin-top: 10px; */
+    margin: 15px auto;
+}
+
+.days {
+    text-align: center;
+    width: 150px;
+    height: 260px;
+    border-radius: 5px;
+    margin: 5px;
+    /* box-shadow: 0px 0px 15px 8px rgba(171, 197, 211, 0.48); */
+    transition: height 0.3s
+}
+
+.day {
+    margin-top: 10px;
+}
+
+.days:hover {
+    background-color: #5a5a5a61;
+    height: 250px;
+    font-size: 13px;
+    border-radius: 20px;
+}
+
+.time img {
+    margin: 0 auto;
+    height: 50px;
+
+}
+/* 
+.backg {
+    background-color: aqua;
+} */
+
+
+
+.two {
+    display: none;
+    animation-name: animTwo;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+    height: 130px;
+}
+
+
+
+.hidden {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 110px;
+    padding: 5px;
+    text-align: center;
+    /* border-radius: 5px; */
+}
+
+ @keyframes animTwo {
+    0% {
+        display: block;
+        margin: 0 auto;
+        height: 10px;
+        transform: translateZ(0);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+
+    }
+
+    100% {
+        display: block;
+        margin: 0 auto;
+     
+        height: 110px;
+    }
+} 
+
+.weekDay {
+    font-size: 15px;
+    line-height: 150%;
+    text-align: center;
+}
+
+.sunrise-Sunset {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-between;
+    height: 54px;
+    width: 168px;
+}
+
+div.days:nth-child(1)>div:nth-child(3),
+div.days:nth-child(2)>div:nth-child(3),
+div.days:nth-child(3)>div:nth-child(3),
+div.days:nth-child(4)>div:nth-child(3),
+div.days:nth-child(5)>div:nth-child(3),
+div.days:nth-child(6)>div:nth-child(3),
+div.days:nth-child(7)>div:nth-child(3),
+div.days:nth-child(8)>div:nth-child(3) {
+    margin: 10px;
+    height: 35px;
+}
+
+
+/* ------------------------------------------------------------------------------------------- */
+
+@media (max-width: 991px) {
+    .container {
+        height: 100vh;
+        width: 100%;
+        margin: 0 auto;
+        font-size: 12px;
+        line-height: 150%;
+        font-family: system-ui;
+        border-radius: 25px;
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        /* background-color: #070505c7; */
+        box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.63);
+    }
+
+
+
+
+    .container {
+        font-size: 11px;
+        line-height: 150%;
+        font-family: system-ui;
+        color: #fff;
+    }
+
+    .city {
+        font-size: 30px;
+        /* font-weight: 600; */
+    }
+
+    .degrres {
+        font-size: 15px;
+        line-height: 130%;
+        font-weight: 600;
+        text-align: center;
+    }
+
+
+    #one,
+    .details,
+    .daily {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+
+
+    .days {
+        transition: height 0.3s
+    }
+
+    .days:hover {
+        background-color: #36394163;
+        height: 200px;
+        font-size: 11px;
+        border-radius: 20px;
+    }
+
+    .days {
+        /* display: grid; */
+        text-align: center;
+        width: 150px;
+        height: 210px;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+
+
+    div.days:nth-child(1)>div:nth-child(2)>img:nth-child(1),
+    div.days:nth-child(2)>div:nth-child(2)>img:nth-child(1),
+    div.days:nth-child(3)>div:nth-child(2)>img:nth-child(1),
+    div.days:nth-child(4)>div:nth-child(2)>img:nth-child(1),
+    div.days:nth-child(5)>div:nth-child(2)>img:nth-child(1),
+    div.days:nth-child(6)>div:nth-child(2)>img:nth-child(1),
+    div.days:nth-child(7)>div:nth-child(2)>img:nth-child(1),
+    div.days:nth-child(8)>div:nth-child(2)>img:nth-child(1) {
+        height: 60px;
+        width: 60px;
+        /* margin: 10px auto; */
+        /* margin: 7px; */
+    }
+
+    div.days:nth-child(1)>div:nth-child(3),
+    div.days:nth-child(2)>div:nth-child(3),
+    div.days:nth-child(3)>div:nth-child(3),
+    div.days:nth-child(4)>div:nth-child(3),
+    div.days:nth-child(5)>div:nth-child(3),
+    div.days:nth-child(6)>div:nth-child(3),
+    div.days:nth-child(7)>div:nth-child(3),
+    div.days:nth-child(8)>div:nth-child(3) {
+        margin: 10px;
+        height: 35px;
+    }
+
+
+    .lenghtDayIcon>img:nth-child(1) {
+        width: 94px;
+    }
+
+    .weekDay,
+    .humidityDay,
+    .pressureDay,
+    .wind_speed,
+    .uvi,
+    .sunrise-Sunset {
+        margin: 10px;
+    }
+
+
+    #hourlyWeather {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+    }
+
+    .daily {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow: auto;
+        /* white-space: nowrap; */
+        scrollbar-width: none;
+    }
+
+    .time {
+        width: 65px;
+        /* height: 85px;
+         width: 85px; */
+        padding: 5px;
+    }
+
+    .tempEveryday {
+        position: relative;
+        top: 15px;
+    }
+
+    .windIcon {
+        position: relative;
+        top: 8px;
+        right: 10px;
+        /* height: 57px; */
+        /* width: 115px; */
+        text-align: center;
+    }
+
+    .details {
+        height: 80px;
+    }
+
+    .wind {
+        height: 53px;
+        width: 115px;
+        text-align: center;
+    }
+
+    .windIcon {
+        position: relative;
+        height: 32px;
+        right: 10px;
+        top: 12px;
+    }
+
+}
+
+
+
+
+@media (max-width: 768px) {
+    .container {
+        font-size: 7px;
+        line-height: 150%;
+        font-family: system-ui;
+        color: #fff;
+    }
+
+    .icon>img:nth-child(1) {
+        width: 60px;
+        height: 60px;
+    }
+
+    #one {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .wind,
+    .humidity,
+    .pressure {
+        margin: 5px;
+    }
+
+    #hourlyWeather {
+        margin-top: 10px;
+    }
+
+
+    .city,
+    .icon,
+    .degrres {
+        margin: 5px;
+
+    }
+
+    .city {
+        margin-top: 10px;
+        font-size: 25px;
+    }
+
+    .degrres {
+        font-size: 12px;
+        line-height: 130%;
+        text-align: center;
+    }
+
+    .details {
+        margin-top: 10px;
+        height: 80px;
+        text-align: center;
+    }
+
+    .time img {
+        margin: 0 auto;
+        height: 40px;
+    }
+
+    .weekDay,
+    .humidityDay,
+    .pressureDay,
+    .wind_speed,
+    .uvi,
+    .sunrise-Sunset {
+        margin: 5px;
+    }
+
+    .lenghtDayIcon>img:nth-child(1) {
+        width: 35px;
+    }
+
+    .sunriseDayIcon>img:nth-child(1),
+    .sunsetDayIcon>img:nth-child(1) {
+        height: 18px;
+        width: 18px;
+    }
+
+    .sunrise-Sunset {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: stretch;
+        justify-content: space-between;
+        height: 40px;
+        width: 150px;
+    }
+}
