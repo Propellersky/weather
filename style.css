@@ -16,17 +16,17 @@
     box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.63);
 }
 
-#one,
+.current-day-forecast,
 .details,
-.daily,
-#hourlyWeather {
+.weekly-forecast-widget,
+.hourly-forecast-widget {
 
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-evenly;
-    /* margin: 10px; */
+    margin: 10px;
     /* padding: 5px; */
 
     /* box-shadow: 0px 0px 15px 8px rgba(144, 164, 175, 0.48); */
@@ -59,14 +59,14 @@
 }
 
 
-.time {
+.hourlyForecast {
     text-align: center;
     display: block;
     /* margin-top: 10px; */
     margin: 15px auto;
 }
 
-.days {
+.day-of-the-week {
     text-align: center;
     width: 150px;
     height: 260px;
@@ -76,18 +76,19 @@
     transition: height 0.3s
 }
 
-.day {
-    margin-top: 10px;
-}
-
-.days:hover {
+.day-of-the-week:hover {
     background-color: #5a5a5a61;
     height: 250px;
     font-size: 13px;
     border-radius: 20px;
 }
 
-.time img {
+.day {
+    margin-top: 10px;
+}
+
+
+.hourlyForecast img {
     margin: 0 auto;
     height: 50px;
 
@@ -99,7 +100,7 @@
 
 
 
-.two {
+.forecast-of-the-selected-day-widget {
     display: none;
     animation-name: animTwo;
     animation-duration: 0.5s;
@@ -156,14 +157,14 @@
     width: 168px;
 }
 
-div.days:nth-child(1)>div:nth-child(3),
-div.days:nth-child(2)>div:nth-child(3),
-div.days:nth-child(3)>div:nth-child(3),
-div.days:nth-child(4)>div:nth-child(3),
-div.days:nth-child(5)>div:nth-child(3),
-div.days:nth-child(6)>div:nth-child(3),
-div.days:nth-child(7)>div:nth-child(3),
-div.days:nth-child(8)>div:nth-child(3) {
+div.day-of-the-week:nth-child(1)>div:nth-child(3),
+div.day-of-the-week:nth-child(2)>div:nth-child(3),
+div.day-of-the-week:nth-child(3)>div:nth-child(3),
+div.day-of-the-week:nth-child(4)>div:nth-child(3),
+div.day-of-the-week:nth-child(5)>div:nth-child(3),
+div.day-of-the-week:nth-child(6)>div:nth-child(3),
+div.day-of-the-week:nth-child(7)>div:nth-child(3),
+div.day-of-the-week:nth-child(8)>div:nth-child(3) {
     margin: 10px;
     height: 35px;
 }
@@ -222,18 +223,18 @@ div.days:nth-child(8)>div:nth-child(3) {
 
 
 
-    .days {
+    .dayOfTheWeek {
         transition: height 0.3s
     }
 
-    .days:hover {
+    .dayOfTheWeek:hover {
         background-color: #36394163;
         height: 200px;
         font-size: 11px;
         border-radius: 20px;
     }
 
-    .days {
+    .dayOfTheWeek {
         /* display: grid; */
         text-align: center;
         width: 150px;
@@ -285,7 +286,7 @@ div.days:nth-child(8)>div:nth-child(3) {
     }
 
 
-    #hourlyWeather {
+    #hourly-forecast-block {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
