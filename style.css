@@ -18,20 +18,96 @@
 
 .current-day-forecast,
 .details,
-.weekly-forecast-widget,
-.hourly-forecast-widget {
-
+.weekly-forecast-widget {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-evenly;
     margin: 10px;
-    /* padding: 5px; */
+}
 
-    /* box-shadow: 0px 0px 15px 8px rgba(144, 164, 175, 0.48); */
+.hourly-forecast-widget {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    height: 162px;
+    display: flex;
 
 }
+
+.slider-line {
+    width: 2400px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    right: 0;
+    transition: all ease 0.5s;
+}
+
+
+
+
+.none {
+    display: none;
+}
+
+.fact-hour {
+    text-align: center;
+    display: block;
+    margin: 15px auto;
+    width: 100px;
+}
+
+.fact-hour img {
+    margin: 0 auto;
+    height: 60px;
+}
+
+
+
+.swiper-button-prev {
+    position: absolute;
+    left: 0px;
+    border-radius: 20px;
+    top: 290px;
+    z-index: 1;
+    width: 35px;
+    height: 75px;
+    background-image: url("/icon/arrow-left.svg");
+    background-size: 35px 75px;
+    opacity: 0.65;
+    border: 1px solid black;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
+    -moz-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
+    box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
+    border-radius: 20px;
+}
+
+
+.swiper-button-next {
+    position: absolute;
+    right: 0px;
+    top: 290px;
+    z-index: 1;
+    width: 35px;
+    height: 75px;
+    background-image: url("/icon/arrow-right.svg");
+    background-size: 35px 75px;
+    opacity: 0.65;
+    border: 1px solid black;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
+    -moz-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
+    box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
+    border-radius: 20px;
+}
+
+
 
 .bg {
     position: absolute;
@@ -59,12 +135,6 @@
 }
 
 
-.hourlyForecast {
-    text-align: center;
-    display: block;
-    /* margin-top: 10px; */
-    margin: 15px auto;
-}
 
 .day-of-the-week {
     text-align: center;
@@ -88,17 +158,6 @@
 }
 
 
-.hourlyForecast img {
-    margin: 0 auto;
-    height: 50px;
-
-}
-/* 
-.backg {
-    background-color: aqua;
-} */
-
-
 
 .forecast-of-the-selected-day-widget {
     display: none;
@@ -120,10 +179,53 @@
     height: 110px;
     padding: 5px;
     text-align: center;
-    /* border-radius: 5px; */
 }
 
- @keyframes animTwo {
+.week-day,
+.sunrise-sunset,
+.humidity-day,
+.pressure-day,
+.wind-speed,
+.uvi {
+    width: 22%;
+    height: 111px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+/* .sunriseday-icon>img:nth-child(1) {
+    display: block;
+    position: relative;
+    top: 52px;
+}
+
+.sunrise-day {
+    display: block;
+    position: relative;
+
+    right: 60px;
+}
+
+.sunset-day {
+    display: block;
+    position: relative;
+    top: -18px;
+    left: 58px;
+}
+
+.sunsetday-icon>img:nth-child(1) {
+    display: block;
+    position: relative;
+    top: -7px;
+    left: 133px;
+
+} */
+
+
+
+
+
+@keyframes animTwo {
     0% {
         display: block;
         margin: 0 auto;
@@ -136,26 +238,26 @@
     100% {
         display: block;
         margin: 0 auto;
-     
+
         height: 110px;
     }
-} 
+}
 
-.weekDay {
+/* .week-day {
     font-size: 15px;
     line-height: 150%;
     text-align: center;
-}
+} */
 
-.sunrise-Sunset {
+/* .sunrise-sunset {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: stretch;
     justify-content: space-between;
     height: 54px;
-    width: 168px;
-}
+    width: 202px;
+} */
 
 div.day-of-the-week:nth-child(1)>div:nth-child(3),
 div.day-of-the-week:nth-child(2)>div:nth-child(3),
@@ -211,9 +313,9 @@ div.day-of-the-week:nth-child(8)>div:nth-child(3) {
     }
 
 
-    #one,
+    .current-day-forecast,
     .details,
-    .daily {
+    .weekly-forecast-widget {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -223,18 +325,18 @@ div.day-of-the-week:nth-child(8)>div:nth-child(3) {
 
 
 
-    .dayOfTheWeek {
+    .weekly-forecast-widget {
         transition: height 0.3s
     }
 
-    .dayOfTheWeek:hover {
+    .weekly-forecast-widget:hover {
         background-color: #36394163;
         height: 200px;
         font-size: 11px;
         border-radius: 20px;
     }
 
-    .dayOfTheWeek {
+    .weekly-forecast-widget {
         /* display: grid; */
         text-align: center;
         width: 150px;
@@ -286,7 +388,7 @@ div.day-of-the-week:nth-child(8)>div:nth-child(3) {
     }
 
 
-    #hourly-forecast-block {
+    .hourly-forecast-widget {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;

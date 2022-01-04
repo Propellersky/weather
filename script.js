@@ -4,21 +4,20 @@ let degrres = document.querySelector(".degrres")
 let wind = document.querySelector(".wind")
 let humidity = document.querySelector(".humidity")
 let pressure = document.querySelector(".pressure")
-let air_quality = document.querySelector(".air_quality")
 let icon = document.querySelector(".icon")
-let feelsLike = document.querySelector(".feels_like")
+let feelsLike = document.querySelector(".feels-like")
 let day = document.querySelectorAll(".day")
 let weatherIcon = document.querySelectorAll(".weather-icon")
 let weatherDescription = document.querySelectorAll(".weather-description")
 let tempDay = document.querySelectorAll(".temp-day")
 let tempNight = document.querySelectorAll(".temp-night")
-let hourlyForecast = document.querySelectorAll(".hourlyForecast")
-let sunriseDay = document.querySelector(".sunriseDay")
-let sunsetDay = document.querySelector(".sunsetDay")
+let factHour = document.querySelectorAll(".fact-hour")
+let sunriseDay = document.querySelector(".sunrise-day")
+let sunsetDay = document.querySelector(".sunset-day")
 let uvi = document.querySelector(".uvi")
 let pressureDay = document.querySelector(".pressure-day")
 let forecastOfTheSelectedDayWidget = document.querySelector(".forecast-of-the-selected-day-widget")
-let weekDay = document.querySelector(".weekDay")
+let weekDay = document.querySelector(".week-day")
 let humidityDay = document.querySelector(".humidity-day")
 let dayOfTheWeek = document.querySelectorAll(".day-of-the-week")
 
@@ -26,6 +25,39 @@ let fMounthEn = ["January", "February", "March", "April", "May", "June", "July",
 let daysArrEn = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let fMounthRu = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
 let daysArrRu = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+
+
+
+
+let sliderLine = document.querySelector(".slider-line")
+
+let offset = 0;
+
+document.querySelector(".swiper-button-prev").addEventListener("click", function () {
+  offset = offset -= 300;
+  if (offset == 0) {
+    document.querySelector(".swiper-button-prev").classList.add("none")
+  } else if (offset > 0) {
+    document.querySelector(".swiper-button-next").classList.remove("none")
+  }
+  sliderLine.style.right = offset + "px";
+})
+
+
+document.querySelector(".swiper-button-next").addEventListener("click", function () {
+
+  offset = offset += 300;
+
+  if (offset == 300) {
+    document.querySelector(".swiper-button-prev").classList.remove("none")
+  } else if (offset == 1200) {
+    document.querySelector(".swiper-button-next").classList.add("none")
+  }
+  sliderLine.style.right = offset + "px";
+})
+
+
+
 
 
 
@@ -48,7 +80,7 @@ function createWeatherApp() {
 
           /*-------------------------------current forecast --------------------------------------------*/
           createForecastForCurrentDay(data);
-
+        
           /*-------------------------------hourly forecast --------------------------------------------*/
           hourlyForecastForCurrentDay(data)
 
@@ -72,7 +104,7 @@ function createWeatherApp() {
       cityName.innerHTML = data["timezone"].split("/")[1]
       icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${data["current"]["weather"][0]["icon"]}@4x.png">`
       degrres.innerHTML = Math.floor(data['current']['temp']) + "&deg" + " " + data["current"]['weather'][0]['description'] + '<br>'
-      wind.append(" "+ Math.floor(data['current']['wind_speed']) + " м.с")
+      wind.append(" " + Math.floor(data['current']['wind_speed']) + " м.с")
       degrres.innerHTML += "ощущается как " + Math.floor(data['current']["feels_like"]) + "&deg";
       humidity.append(" " + data['current']['humidity'] + "%")
       pressure.append(" " + Math.floor(data['current']['pressure'] / 1.333) + " мм.рт.ст")
@@ -82,11 +114,13 @@ function createWeatherApp() {
 
 
     function hourlyForecastForCurrentDay(data) {
-      for (let k = 0; k < hourlyForecast.length; k++) {
+      for (let k = 0; k < factHour.length; k++) {
         let hours = new Date(data["hourly"][k]['dt'] * 1000)
-        hourlyForecast[k].innerHTML = hours.getHours() + " :" + " 00" + "<br>" + `<img src="http://openweathermap.org/img/wn/${data["hourly"][k]["weather"][0]["icon"]}@2x.png">` + "<br> " + Math.floor(data["hourly"][k]["temp"]) + "&deg";
+        factHour[k].innerHTML = hours.getHours() + " :" + " 00" + "<br>" + `<img src="http://openweathermap.org/img/wn/${data["hourly"][k]["weather"][0]["icon"]}@2x.png">` + "<br> " + Math.floor(data["hourly"][k]["temp"]) + "&deg";
       }
     }
+
+
 
 
     function createWeeklyWeatherForecast(data) {
@@ -117,7 +151,7 @@ function createWeatherApp() {
       sunriseDay.innerHTML = sunriseHour + " : " + sunriseMinute
       sunsetDay.innerHTML = sunsetHour + " : " + sunsetMinute
       pressureDay.innerHTML = "Атмосферное давление " + Math.floor(data["daily"][i]["pressure"] / 1.333) + " мм.рт.ст"
-      document.querySelector(".wind_speed").innerHTML = "Скорость ветра " + Math.floor(data["daily"][i]["wind_speed"]) + " м.с"
+      document.querySelector(".wind-speed").innerHTML = "Скорость ветра " + Math.floor(data["daily"][i]["wind_speed"]) + " м.с"
 
       humidityDay.innerHTML = "Влажность " + data["daily"][i]["humidity"] + "%"
       forecastOfTheSelectedDayWidget.classList.add("hidden")
