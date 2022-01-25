@@ -48,6 +48,7 @@ function createWeatherApp() {
 
           /*-------------------------------current forecast --------------------------------------------*/
           createForecastForCurrentDay(data);
+          console.log(data)
 
           /*-------------------------------hourly forecast --------------------------------------------*/
           hourlyForecastForCurrentDay(data)
@@ -147,7 +148,6 @@ function createWeatherApp() {
   // }
 }
 createWeatherApp();
-
 
 
 
