@@ -38,7 +38,6 @@
     scrollbar-width: none;
     height: 162px;
     display: flex;
-
 }
 
 .slider-line {
@@ -49,8 +48,6 @@
     right: 0;
     transition: all ease 0.5s;
 }
-
-
 
 
 .none {
@@ -69,35 +66,26 @@
     height: 60px;
 }
 
-
-
 .swiper-button-prev {
-    position: absolute;
     left: 0px;
-    border-radius: 20px;
-    top: 290px;
-    z-index: 1;
-    width: 35px;
-    height: 75px;
     background-image: url("/icon/arrow-left.svg");
-    background-size: 35px 75px;
-    opacity: 0.65;
-    border: 1px solid black;
-    -webkit-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
-    -moz-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
-    box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
-    border-radius: 20px;
-}
 
+}
 
 .swiper-button-next {
-    position: absolute;
     right: 0px;
+    background-image: url("/icon/arrow-right.svg");
+
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    border-radius: 20px;
     top: 290px;
     z-index: 1;
     width: 35px;
     height: 75px;
-    background-image: url("/icon/arrow-right.svg");
     background-size: 35px 75px;
     opacity: 0.65;
     border: 1px solid black;
@@ -106,8 +94,6 @@
     box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
     border-radius: 20px;
 }
-
-
 
 .bg {
     position: absolute;
@@ -120,9 +106,6 @@
     background-size: cover;
 }
 
-
-
-
 .city {
     font-size: 50px;
     font-weight: 600;
@@ -134,32 +117,24 @@
     font-weight: 600;
 }
 
-
-
-
-
-
 .day-of-the-week {
     text-align: center;
     width: 150px;
     height: 260px;
     border-radius: 5px;
     margin: 5px;
-    /* box-shadow: 0px 0px 15px 8px rgba(171, 197, 211, 0.48); */
     transition: height 0.3s
 }
 
 .day-of-the-week:hover {
     background-color: #5a5a5a61;
-    height: 250px;
+    height: 255px;
     border-radius: 20px;
 }
 
 .day {
     margin-top: 10px;
 }
-
-
 
 .forecast-of-the-selected-day-widget {
     display: none;
@@ -169,8 +144,6 @@
     animation-fill-mode: backwards;
     height: 130px;
 }
-
-
 
 .hidden {
     display: flex;
@@ -183,17 +156,20 @@
     text-align: center;
 }
 
-.week-day, .sunrise-sunset, .humidity-day, .pressure-day, .wind-speed, .uvi {
+.week-day,
+.sunrise-sunset,
+.humidity-day,
+.pressure-day,
+.wind-speed,
+.uvi {
     display: block;
     height: 111px;
-    /* border: 1px solid white; */
     width: 162px;
     align-content: center;
     display: inline-grid;
-  }
+}
 
-
- .sunriseday-icon>img:nth-child(1) {
+.sunriseday-icon>img:nth-child(1) {
     display: block;
     position: relative;
     top: 52px;
@@ -202,7 +178,6 @@
 .sunrise-day {
     display: block;
     position: relative;
-
     right: 60px;
 }
 
@@ -219,11 +194,7 @@
     top: -7px;
     left: 133px;
 
-} 
-
-
-
-
+}
 
 @keyframes animTwo {
     0% {
@@ -232,32 +203,14 @@
         height: 10px;
         transform: translateZ(0);
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-
     }
 
     100% {
         display: block;
         margin: 0 auto;
-
         height: 110px;
     }
 }
-
-/* .week-day {
-    font-size: 15px;
-    line-height: 150%;
-    text-align: center;
-} */
-
-/* .sunrise-sunset {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: stretch;
-    justify-content: space-between;
-    height: 54px;
-    width: 202px;
-} */
 
 div.day-of-the-week:nth-child(1)>div:nth-child(3),
 div.day-of-the-week:nth-child(2)>div:nth-child(3),
@@ -273,311 +226,3 @@ div.day-of-the-week:nth-child(8)>div:nth-child(3) {
 
 
 /* ------------------------------------------------------------------------------------------- */
-
-@media (max-width: 991px) {
-    .container {
-        height: 100vh;
-        width: 100%;
-        margin: 0 auto;
-        font-size: 12px;
-        line-height: 150%;
-        font-family: system-ui;
-        border-radius: 25px;
-        position: relative;
-        z-index: 2;
-        color: #fff;
-        /* background-color: #070505c7; */
-        box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.63);
-    }
-
-
-
-
-    .container {
-        font-size: 11px;
-        line-height: 150%;
-        font-family: system-ui;
-        color: #fff;
-    }
-
-    .city {
-        font-size: 30px;
-        /* font-weight: 600; */
-    }
-
-    .degrres {
-        font-size: 15px;
-        line-height: 130%;
-        font-weight: 600;
-        text-align: center;
-    }
-
-
-    .current-day-forecast,
-    .details,
-    .weekly-forecast-widget {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-
-
-
-    .weekly-forecast-widget {
-        transition: height 0.3s
-    }
-
-    /* .weekly-forecast-widget:hover {
-        background-color: #36394163;
-        height: 200px;
-        font-size: 11px;
-        border-radius: 20px;
-    } */
-
-    .weekly-forecast-widget {
-        text-align: center;
-        width: 974px;
-        height: 210px;
-        border-radius: 5px;
-        margin: 5px;
-      }
-
-      .fact-hour {
-        text-align: center;
-        display: block;
-        margin: 15px auto;
-        width: 89px;
-      }
-
-      .swiper-button-prev
-       {
-        position: absolute;
-        left: 0px;
-        border-radius: 20px;
-        top: 350px;
-        z-index: 1;
-        width: 35px;
-        height: 75px;
-        background-image: url("/icon/arrow-left.svg");
-        background-size: 35px 75px;
-        opacity: 0.65;
-        border: 1px solid black;
-        -webkit-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
-        -moz-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
-        box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
-        border-radius: 20px;
-      }
-      .swiper-button-next {
-        position: absolute;
-        right: 0px;
-        top: 350px;
-        z-index: 1;
-        width: 35px;
-        height: 75px;
-        background-image: url("/icon/arrow-right.svg");
-        background-size: 35px 75px;
-        opacity: 0.65;
-        border: 1px solid black;
-        -webkit-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
-        -moz-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
-        box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
-        border-radius: 20px;
-      }
-
-
-    div.days:nth-child(1)>div:nth-child(2)>img:nth-child(1),
-    div.days:nth-child(2)>div:nth-child(2)>img:nth-child(1),
-    div.days:nth-child(3)>div:nth-child(2)>img:nth-child(1),
-    div.days:nth-child(4)>div:nth-child(2)>img:nth-child(1),
-    div.days:nth-child(5)>div:nth-child(2)>img:nth-child(1),
-    div.days:nth-child(6)>div:nth-child(2)>img:nth-child(1),
-    div.days:nth-child(7)>div:nth-child(2)>img:nth-child(1),
-    div.days:nth-child(8)>div:nth-child(2)>img:nth-child(1) {
-        height: 60px;
-        width: 60px;
-        /* margin: 10px auto; */
-        /* margin: 7px; */
-    }
-
-    div.days:nth-child(1)>div:nth-child(3),
-    div.days:nth-child(2)>div:nth-child(3),
-    div.days:nth-child(3)>div:nth-child(3),
-    div.days:nth-child(4)>div:nth-child(3),
-    div.days:nth-child(5)>div:nth-child(3),
-    div.days:nth-child(6)>div:nth-child(3),
-    div.days:nth-child(7)>div:nth-child(3),
-    div.days:nth-child(8)>div:nth-child(3) {
-        margin: 10px;
-        height: 35px;
-    }
-
-
-    .lenghtDayIcon>img:nth-child(1) {
-        width: 94px;
-    }
-
-    .weekDay,
-    .humidityDay,
-    .pressureDay,
-    .wind_speed,
-    .uvi,
-    .sunrise-Sunset {
-        margin: 10px;
-    }
-
-
-    .hourly-forecast-widget {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        overflow: auto;
-        white-space: nowrap;
-        scrollbar-width: none;
-    }
-
-    .daily {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        overflow: auto;
-        /* white-space: nowrap; */
-        scrollbar-width: none;
-    }
-
-    .time {
-        width: 65px;
-        /* height: 85px;
-         width: 85px; */
-        padding: 5px;
-    }
-
-    .tempEveryday {
-        position: relative;
-        top: 15px;
-    }
-
-    .windIcon {
-        position: relative;
-        top: 8px;
-        right: 10px;
-        /* height: 57px; */
-        /* width: 115px; */
-        text-align: center;
-    }
-
-    .details {
-        height: 80px;
-    }
-
-    .wind {
-        height: 53px;
-        width: 115px;
-        text-align: center;
-    }
-
-    .windIcon {
-        position: relative;
-        height: 32px;
-        right: 10px;
-        top: 12px;
-    }
-
-}
-
-
-
-
-@media (max-width: 768px) {
-    .container {
-        font-size: 7px;
-        line-height: 150%;
-        font-family: system-ui;
-        color: #fff;
-    }
-
-    .icon>img:nth-child(1) {
-        width: 60px;
-        height: 60px;
-    }
-
-    #one {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-
-    .wind,
-    .humidity,
-    .pressure {
-        margin: 5px;
-    }
-
-    #hourlyWeather {
-        margin-top: 10px;
-    }
-
-
-    .city,
-    .icon,
-    .degrres {
-        margin: 5px;
-
-    }
-
-    .city {
-        margin-top: 10px;
-        font-size: 25px;
-    }
-
-    .degrres {
-        font-size: 12px;
-        line-height: 130%;
-        text-align: center;
-    }
-
-    .details {
-        margin-top: 10px;
-        height: 80px;
-        text-align: center;
-    }
-
-    .time img {
-        margin: 0 auto;
-        height: 40px;
-    }
-
-    .weekDay,
-    .humidityDay,
-    .pressureDay,
-    .wind_speed,
-    .uvi,
-    .sunrise-Sunset {
-        margin: 5px;
-    }
-
-    .lenghtDayIcon>img:nth-child(1) {
-        width: 35px;
-    }
-
-    .sunriseDayIcon>img:nth-child(1),
-    .sunsetDayIcon>img:nth-child(1) {
-        height: 18px;
-        width: 18px;
-    }
-
-    .sunrise-Sunset {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: stretch;
-        justify-content: space-between;
-        height: 40px;
-        width: 150px;
-    }
-}
