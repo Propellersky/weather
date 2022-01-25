@@ -136,6 +136,9 @@
 
 
 
+
+
+
 .day-of-the-week {
     text-align: center;
     width: 150px;
@@ -180,20 +183,17 @@
     text-align: center;
 }
 
-.week-day,
-.sunrise-sunset,
-.humidity-day,
-.pressure-day,
-.wind-speed,
-.uvi {
-    width: 22%;
+.week-day, .sunrise-sunset, .humidity-day, .pressure-day, .wind-speed, .uvi {
+    display: block;
     height: 111px;
-    text-align: center;
-    border: 1px solid white;
-}
+    /* border: 1px solid white; */
+    width: 162px;
+    align-content: center;
+    display: inline-grid;
+  }
 
 
-/* .sunriseday-icon>img:nth-child(1) {
+ .sunriseday-icon>img:nth-child(1) {
     display: block;
     position: relative;
     top: 52px;
@@ -219,7 +219,7 @@
     top: -7px;
     left: 133px;
 
-} */
+} 
 
 
 
@@ -329,22 +329,62 @@ div.day-of-the-week:nth-child(8)>div:nth-child(3) {
         transition: height 0.3s
     }
 
-    .weekly-forecast-widget:hover {
+    /* .weekly-forecast-widget:hover {
         background-color: #36394163;
         height: 200px;
         font-size: 11px;
         border-radius: 20px;
-    }
+    } */
 
     .weekly-forecast-widget {
-        /* display: grid; */
         text-align: center;
-        width: 150px;
+        width: 974px;
         height: 210px;
         border-radius: 5px;
         margin: 5px;
-    }
+      }
 
+      .fact-hour {
+        text-align: center;
+        display: block;
+        margin: 15px auto;
+        width: 89px;
+      }
+
+      .swiper-button-prev
+       {
+        position: absolute;
+        left: 0px;
+        border-radius: 20px;
+        top: 350px;
+        z-index: 1;
+        width: 35px;
+        height: 75px;
+        background-image: url("/icon/arrow-left.svg");
+        background-size: 35px 75px;
+        opacity: 0.65;
+        border: 1px solid black;
+        -webkit-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
+        -moz-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
+        box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
+        border-radius: 20px;
+      }
+      .swiper-button-next {
+        position: absolute;
+        right: 0px;
+        top: 350px;
+        z-index: 1;
+        width: 35px;
+        height: 75px;
+        background-image: url("/icon/arrow-right.svg");
+        background-size: 35px 75px;
+        opacity: 0.65;
+        border: 1px solid black;
+        -webkit-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
+        -moz-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
+        box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
+        border-radius: 20px;
+      }
 
 
     div.days:nth-child(1)>div:nth-child(2)>img:nth-child(1),
