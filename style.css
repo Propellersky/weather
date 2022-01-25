@@ -27,8 +27,7 @@
     margin: 10px;
 }
 
-.hourly-forecast-widget {
-    margin: 10px;
+.hourly-forecast-widget { 
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
