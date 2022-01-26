@@ -27,7 +27,7 @@
     margin: 10px;
 }
 
-.hourly-forecast-widget { 
+.hourly-forecast-widget {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -67,13 +67,13 @@
 
 .swiper-button-prev {
     left: 0px;
-    background-image: url("/icon/arrow-left.svg");
+    background-image: url("/icons/arrow-left.svg");
 
 }
 
 .swiper-button-next {
     right: 0px;
-    background-image: url("/icon/arrow-right.svg");
+    background-image: url("/icons/arrow-right.svg");
 
 }
 
@@ -161,39 +161,47 @@
 .pressure-day,
 .wind-speed,
 .uvi {
-    display: block;
-    height: 111px;
+
+    height: 35px;
     width: 162px;
-    align-content: center;
-    display: inline-grid;
+
 }
 
-.sunriseday-icon>img:nth-child(1) {
+.lenghtday-icon>img:nth-child(1) {
     display: block;
+    bottom: 24px;
     position: relative;
-    top: 52px;
+    margin: 0 auto;
+    width: 70px;
 }
 
-.sunrise-day {
+.sunriseday-icon > img:nth-child(1) {
     display: block;
     position: relative;
-    right: 60px;
-}
+    left: 10px;
+  }
+
+  .sunrise-day {
+    display: block;
+    position: relative;
+    right: 57px;
+    bottom: 47px;
+  }
 
 .sunset-day {
     display: block;
     position: relative;
-    top: -18px;
+    bottom: 65px;
     left: 58px;
 }
 
-.sunsetday-icon>img:nth-child(1) {
+.sunsetday-icon > img:nth-child(1) {
     display: block;
     position: relative;
-    top: -7px;
-    left: 133px;
-
-}
+    bottom: 45px;
+    left: 125px;
+    bottom: 43px;
+  }
 
 @keyframes animTwo {
     0% {
@@ -225,3 +233,90 @@ div.day-of-the-week:nth-child(8)>div:nth-child(3) {
 
 
 /* ------------------------------------------------------------------------------------------- */
+
+
+
+@media (max-width: 576px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        margin: 0px auto;
+        font-size: 12px;
+        line-height: 150%;
+        font-family: system-ui;
+        border-radius: 0px;
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        background-color: #000000c7;
+        box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.63);
+    }
+
+    .current-day-forecast,
+    .details,
+    .weekly-forecast-widget {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0px;
+    }
+
+    .city {
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .icon>img:nth-child(1) {
+        height: 70px;
+        margin: 10px;
+    }
+
+    .degrres {
+        font-size: 15px;
+        line-height: 130%;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .current-day-forecast {
+        min-height: 33%;
+        z-index: 6;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    div.day-of-the-week:nth-child(1)>div:nth-child(2)>img:nth-child(1),
+    div.day-of-the-week:nth-child(2)>div:nth-child(2)>img:nth-child(1),
+    div.day-of-the-week:nth-child(3)>div:nth-child(2)>img:nth-child(1),
+    div.day-of-the-week:nth-child(4)>div:nth-child(2)>img:nth-child(1),
+    div.day-of-the-week:nth-child(5)>div:nth-child(2)>img:nth-child(1),
+    div.day-of-the-week:nth-child(6)>div:nth-child(2)>img:nth-child(1),
+    div.day-of-the-week:nth-child(7)>div:nth-child(2)>img:nth-child(1),
+    div.day-of-the-week:nth-child(8)>div:nth-child(2)>img:nth-child(1) {
+        width: 50px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+}
