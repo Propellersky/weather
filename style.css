@@ -74,7 +74,6 @@
 .swiper-button-next {
     right: 0px;
     background-image: url("/icons/arrow-right.svg");
-
 }
 
 .swiper-button-prev,
@@ -96,13 +95,13 @@
 
 .bg {
     position: absolute;
-    z-index: 1;
+   
+    z-index: -1;
     left: -10px;
     top: -10px;
     right: -10px;
     bottom: -10px;
-    filter: blur(15px);
-    background-size: cover;
+    filter: blur(10px);
 }
 
 .city {
@@ -175,18 +174,18 @@
     width: 70px;
 }
 
-.sunriseday-icon > img:nth-child(1) {
+.sunriseday-icon>img:nth-child(1) {
     display: block;
     position: relative;
     left: 10px;
-  }
+}
 
-  .sunrise-day {
+.sunrise-day {
     display: block;
     position: relative;
     right: 57px;
     bottom: 47px;
-  }
+}
 
 .sunset-day {
     display: block;
@@ -195,13 +194,13 @@
     left: 58px;
 }
 
-.sunsetday-icon > img:nth-child(1) {
+.sunsetday-icon>img:nth-child(1) {
     display: block;
     position: relative;
     bottom: 45px;
     left: 125px;
     bottom: 43px;
-  }
+}
 
 @keyframes animTwo {
     0% {

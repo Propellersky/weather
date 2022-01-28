@@ -1,4 +1,5 @@
 const apiKey = "163b112f5e1715475aa49fab6aaf7b4c";
+let bg = document.querySelector(".bg")
 let cityName = document.querySelector(".city");
 let degrres = document.querySelector(".degrres")
 let wind = document.querySelector(".wind")
@@ -28,14 +29,11 @@ let daysArrRu = ['Воскресенье', 'Понедельник', 'Вторн
 
 
 
-
-
 function createWeatherApp() {
 
   navigator.geolocation.getCurrentPosition((position) => {
     let lat = position.coords.latitude;
     let long = position.coords.longitude;
-
 
     function dataRequest() {
       fetch(
@@ -48,7 +46,6 @@ function createWeatherApp() {
 
           /*-------------------------------current forecast --------------------------------------------*/
           createForecastForCurrentDay(data);
-          console.log(data)
 
           /*-------------------------------hourly forecast --------------------------------------------*/
           hourlyForecastForCurrentDay(data)
@@ -68,7 +65,6 @@ function createWeatherApp() {
     }
 
 
-
     function createForecastForCurrentDay(data) {
       cityName.innerHTML = data["timezone"].split("/")[1]
       icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${data["current"]["weather"][0]["icon"]}@4x.png">`
@@ -78,7 +74,6 @@ function createWeatherApp() {
       humidity.append(" " + data['current']['humidity'] + "%")
       pressure.append(" " + Math.floor(data['current']['pressure'] / 1.333) + " мм.рт.ст")
       feelsLike.innerHTML = "ощущается как " + Math.floor(data['current']["feels_like"]) + "&deg"
-
     };
 
 
@@ -88,8 +83,6 @@ function createWeatherApp() {
         factHour[k].innerHTML = hours.getHours() + " :" + " 00" + "<br>" + `<img src="http://openweathermap.org/img/wn/${data["hourly"][k]["weather"][0]["icon"]}@2x.png">` + "<br> " + Math.floor(data["hourly"][k]["temp"]) + "&deg";
       }
     }
-
-
 
 
     function createWeeklyWeatherForecast(data) {
@@ -116,12 +109,16 @@ function createWeatherApp() {
       let sunsetHour = dateWeekSunset.getHours()
       let sunsetMinute = dateWeekSunset.getMinutes()
 
+
       weekDay.innerHTML = day[i].firstChild.textContent + "<br>" + dailyForecast.getDate() + " " + getMonthDay(dailyForecast)
       sunriseDay.innerHTML = sunriseHour + " : " + sunriseMinute
-      sunsetDay.innerHTML = sunsetHour + " : " + sunsetMinute
+      if (sunsetMinute.toString().length == 1) {
+        sunsetDay.innerHTML = sunsetHour + " : " + "0" + sunsetMinute;
+      } else {
+        sunsetDay.innerHTML = sunsetHour + " : " + sunsetMinute;
+      }
       pressureDay.innerHTML = "Атмосферное давление " + Math.floor(data["daily"][i]["pressure"] / 1.333) + " мм.рт.ст"
       document.querySelector(".wind-speed").innerHTML = "Скорость ветра " + Math.floor(data["daily"][i]["wind_speed"]) + " м.с"
-
       humidityDay.innerHTML = "Влажность " + data["daily"][i]["humidity"] + "%"
       forecastOfTheSelectedDayWidget.classList.add("hidden")
 
@@ -148,7 +145,3 @@ function createWeatherApp() {
   // }
 }
 createWeatherApp();
-
-
-
-
