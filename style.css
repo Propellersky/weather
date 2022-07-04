@@ -16,6 +16,25 @@
     box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.63);
 }
 
+
+.test {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 0 auto;
+    background-color: bisque;
+    height: 100px;
+    width: 1200px;
+}
+
+
+.one {
+    background-color: rgb(37, 41, 240);
+    width: 10px;
+    margin: 5px;
+}
+
+
 .current-day-forecast,
 .details,
 .weekly-forecast-widget {
@@ -34,9 +53,7 @@
     align-items: center;
     overflow: hidden;
     white-space: nowrap;
-    scrollbar-width: none;
     height: 162px;
-    display: flex;
 }
 
 .slider-line {
@@ -90,12 +107,11 @@
     -webkit-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
     -moz-box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
     box-shadow: 0px 5px 10px 2px rgba(243, 243, 243, 0.2) inset;
-    border-radius: 20px;
 }
 
 .bg {
     position: absolute;
-   
+
     z-index: -1;
     left: -10px;
     top: -10px;
@@ -109,7 +125,7 @@
     font-weight: 600;
 }
 
-.degrres {
+.degrees {
     font-size: 25px;
     line-height: 130%;
     font-weight: 600;
@@ -166,7 +182,7 @@
 
 }
 
-.lenghtday-icon>img:nth-child(1) {
+.length-day-icon > img:nth-child(1) {
     display: block;
     bottom: 24px;
     position: relative;
@@ -174,7 +190,7 @@
     width: 70px;
 }
 
-.sunriseday-icon>img:nth-child(1) {
+.sunrise-day-icon > img:nth-child(1) {
     display: block;
     position: relative;
     left: 10px;
@@ -194,12 +210,11 @@
     left: 58px;
 }
 
-.sunsetday-icon>img:nth-child(1) {
+.sunset-day-icon > img:nth-child(1) {
     display: block;
     position: relative;
     bottom: 45px;
     left: 125px;
-    bottom: 43px;
 }
 
 @keyframes animTwo {
@@ -218,21 +233,20 @@
     }
 }
 
-div.day-of-the-week:nth-child(1)>div:nth-child(3),
-div.day-of-the-week:nth-child(2)>div:nth-child(3),
-div.day-of-the-week:nth-child(3)>div:nth-child(3),
-div.day-of-the-week:nth-child(4)>div:nth-child(3),
-div.day-of-the-week:nth-child(5)>div:nth-child(3),
-div.day-of-the-week:nth-child(6)>div:nth-child(3),
-div.day-of-the-week:nth-child(7)>div:nth-child(3),
-div.day-of-the-week:nth-child(8)>div:nth-child(3) {
+div.day-of-the-week:nth-child(1) > div:nth-child(3),
+div.day-of-the-week:nth-child(2) > div:nth-child(3),
+div.day-of-the-week:nth-child(3) > div:nth-child(3),
+div.day-of-the-week:nth-child(4) > div:nth-child(3),
+div.day-of-the-week:nth-child(5) > div:nth-child(3),
+div.day-of-the-week:nth-child(6) > div:nth-child(3),
+div.day-of-the-week:nth-child(7) > div:nth-child(3),
+div.day-of-the-week:nth-child(8) > div:nth-child(3) {
     margin: 10px;
     height: 35px;
 }
 
 
 /* ------------------------------------------------------------------------------------------- */
-
 
 
 @media (max-width: 576px) {
@@ -268,12 +282,12 @@ div.day-of-the-week:nth-child(8)>div:nth-child(3) {
         text-align: center;
     }
 
-    .icon>img:nth-child(1) {
+    .icon > img:nth-child(1) {
         height: 70px;
         margin: 10px;
     }
 
-    .degrres {
+    .degrees {
         font-size: 15px;
         line-height: 130%;
         font-weight: 600;
@@ -286,31 +300,14 @@ div.day-of-the-week:nth-child(8)>div:nth-child(3) {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    div.day-of-the-week:nth-child(1)>div:nth-child(2)>img:nth-child(1),
-    div.day-of-the-week:nth-child(2)>div:nth-child(2)>img:nth-child(1),
-    div.day-of-the-week:nth-child(3)>div:nth-child(2)>img:nth-child(1),
-    div.day-of-the-week:nth-child(4)>div:nth-child(2)>img:nth-child(1),
-    div.day-of-the-week:nth-child(5)>div:nth-child(2)>img:nth-child(1),
-    div.day-of-the-week:nth-child(6)>div:nth-child(2)>img:nth-child(1),
-    div.day-of-the-week:nth-child(7)>div:nth-child(2)>img:nth-child(1),
-    div.day-of-the-week:nth-child(8)>div:nth-child(2)>img:nth-child(1) {
+    div.day-of-the-week:nth-child(1) > div:nth-child(2) > img:nth-child(1),
+    div.day-of-the-week:nth-child(2) > div:nth-child(2) > img:nth-child(1),
+    div.day-of-the-week:nth-child(3) > div:nth-child(2) > img:nth-child(1),
+    div.day-of-the-week:nth-child(4) > div:nth-child(2) > img:nth-child(1),
+    div.day-of-the-week:nth-child(5) > div:nth-child(2) > img:nth-child(1),
+    div.day-of-the-week:nth-child(6) > div:nth-child(2) > img:nth-child(1),
+    div.day-of-the-week:nth-child(7) > div:nth-child(2) > img:nth-child(1),
+    div.day-of-the-week:nth-child(8) > div:nth-child(2) > img:nth-child(1) {
         width: 50px;
     }
 
@@ -319,3 +316,6 @@ div.day-of-the-week:nth-child(8)>div:nth-child(3) {
         display: none;
     }
 }
+
+/* graphLine */
+

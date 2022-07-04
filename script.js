@@ -1,7 +1,7 @@
 const apiKey = "163b112f5e1715475aa49fab6aaf7b4c";
 let bg = document.querySelector(".bg")
 let cityName = document.querySelector(".city");
-let degrres = document.querySelector(".degrres")
+let degrees = document.querySelector(".degrees")
 let wind = document.querySelector(".wind")
 let humidity = document.querySelector(".humidity")
 let pressure = document.querySelector(".pressure")
@@ -27,6 +27,7 @@ let daysArrEn = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday
 let fMounthRu = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
 let daysArrRu = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 
+let one = document.querySelectorAll(".one")
 
 
 function createWeatherApp() {
@@ -68,13 +69,13 @@ function createWeatherApp() {
     function createForecastForCurrentDay(data) {
       cityName.innerHTML = data["timezone"].split("/")[1]
       icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${data["current"]["weather"][0]["icon"]}@4x.png">`
-      degrres.innerHTML = Math.floor(data['current']['temp']) + "&deg" + " " + data["current"]['weather'][0]['description'] + '<br>'
+      degrees.innerHTML = Math.floor(data['current']['temp']) + "&deg" + " " + data["current"]['weather'][0]['description'] + '<br>'
       wind.append(" " + Math.floor(data['current']['wind_speed']) + " м.с")
-      degrres.innerHTML += "ощущается как " + Math.floor(data['current']["feels_like"]) + "&deg";
+      degrees.innerHTML += "ощущается как " + Math.floor(data['current']["feels_like"]) + "&deg";
       humidity.append(" " + data['current']['humidity'] + "%")
       pressure.append(" " + Math.floor(data['current']['pressure'] / 1.333) + " мм.рт.ст")
       feelsLike.innerHTML = "ощущается как " + Math.floor(data['current']["feels_like"]) + "&deg"
-    };
+    }
 
 
     function hourlyForecastForCurrentDay(data) {
@@ -87,6 +88,10 @@ function createWeatherApp() {
 
     function createWeeklyWeatherForecast(data) {
       for (let i = 0; i < day.length; i++) {
+
+        one[i].style.height += data["daily"][i]["pop"] * 100 + "px" //graphLine test probability of precipitation
+        console.log(data["daily"][i]["pop"] * 100)
+
         let dailyForecast = new Date(data['daily'][i]['dt'] * 1000);
         day[i].innerHTML = getWeekDay(dailyForecast) + "<br>" + dailyForecast.getDate() + " " + getMonthDay(dailyForecast)
         tempDay[i].innerHTML = "день " + Math.floor(data['daily'][i]['temp']['day']) + "&deg"
@@ -111,8 +116,13 @@ function createWeatherApp() {
 
 
       weekDay.innerHTML = day[i].firstChild.textContent + "<br>" + dailyForecast.getDate() + " " + getMonthDay(dailyForecast)
+
       sunriseDay.innerHTML = sunriseHour + " : " + sunriseMinute
-      if (sunsetMinute.toString().length == 1) {
+
+      if (sunriseMinute.toString().length === 1) {
+        sunriseDay.innerHTML = sunriseHour + " : " + "0" + sunriseMinute;
+      }
+      if (sunsetMinute.toString().length === 1) {
         sunsetDay.innerHTML = sunsetHour + " : " + "0" + sunsetMinute;
       } else {
         sunsetDay.innerHTML = sunsetHour + " : " + sunsetMinute;
@@ -135,7 +145,7 @@ function createWeatherApp() {
         uvi.innerHTML = "индекс УФ " + data["daily"][i]["uvi"] + " Чрезмерный"
       }
 
-    };
+    }
 
     dataRequest();
   });
@@ -145,3 +155,5 @@ function createWeatherApp() {
   // }
 }
 createWeatherApp();
+
+
